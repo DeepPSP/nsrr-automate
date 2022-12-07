@@ -21,14 +21,14 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby }} # Not needed with a .ruby-version file
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-    - name: Update gem
-      run: |
-        sudo gem update --system
+    # - name: Update gem
+    #   run: |
+    #     sudo gem update --system
     - name: Install nsrr and download a samll part of SHHS to do test
       # NOT finished yet
       # have to know how to login using GitHub secrets
       # and download a small part of SHHS using
       # `nsrr download shhs/polysomnography/edfs/shhs1/shhs1-20000*.edf`
       run: |
-        sudo gem install nsrr --no-document
+        gem install nsrr --no-document
         nsrr download shhs/polysomnography/edfs/shhs1/ --file="shhs1-20000*.edf" --token=${{ secrets.NSRR_TOKEN }}
