@@ -31,4 +31,4 @@ jobs:
       # `nsrr download shhs/polysomnography/edfs/shhs1/shhs1-20000*.edf`
       run: |
         gem install nsrr --no-document
-        nsrr download shhs/polysomnography/edfs/shhs1/ --file="shhs1-20000*.edf" --token=${{ secrets.NSRR_TOKEN }}
+        nsrr download shhs/polysomnography/edfs/shhs1/ --file="20000*.edf" --token=${{ secrets.NSRR_TOKEN }}
